@@ -406,6 +406,9 @@
         [0, -2,   0, -1,   1, -1,   1,  0],
         [0,  0,   1,  0,   1, -1,   2, -1]
       ]
+
+      //ESPACIO PARA AGREGAR NUEVAS FIGURAS
+
     },
 
     _SetupShapeFactory: function(){
@@ -566,6 +569,9 @@
         rightZag: function() {
           return new Shape(game, game._shapes.rightZag, false, 'rightZag');
         }
+
+        // AGREGAR CREACIÓN DE NUEVA FIGURA
+
       };
     },
 
