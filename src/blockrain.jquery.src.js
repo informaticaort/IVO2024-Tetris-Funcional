@@ -407,7 +407,7 @@
         [0,  0,   1,  0,   1, -1,   2, -1]
       ]
 
-      //ESPACIO PARA AGREGAR NUEVAS FIGURAS
+      //ESPACIO PARA AGREGAR NUEVAS FIGURAS. SE DEBE USAR NOMBRE_DE_FIGURA: [ [PRIMER POSICION], [SEGUNDA POSICION], [TERCER POSICION], [CUARTA POSICION] ]
 
     },
 
@@ -570,7 +570,10 @@
           return new Shape(game, game._shapes.rightZag, false, 'rightZag');
         }
 
-        // AGREGAR CREACIÓN DE NUEVA FIGURA
+        /* AGREGAR CREACIÓN DE NUEVA FIGURA. 
+        SE DEBE COMPLETAR COMO 
+        nombreFigura: function() { return new Shape(game, game._shapes.nombreFigura, false, 'nombreFigura')}
+        */
 
       };
     },
@@ -912,22 +915,6 @@
               game._filled.add(i, game._BLOCK_HEIGHT - j, blockType, game._randInt(0,3), null, game._randInt(0,3));
             }
           }
-
-          /*
-          for (i=0, ilen=WIDTH; i<ilen; i++) {
-            for (j=0, jlen=randChoice([randInt(0, 8), randInt(5, 9)]); j<jlen; j++) {
-              if (!blockType || !randInt(0, 3)) blockType = randChoice(blockTypes);
-              start.push([i, HEIGHT - j, blockType]);
-            }
-          }
-
-          if( options.showFieldOnStart ) {
-            drawBackground();
-            for (i=0, ilen=start.length; i<ilen; i++) {
-              drawBlock.apply(drawBlock, start[i]);
-            }
-          }
-          */
 
           game._board.render(true);
 
@@ -1474,16 +1461,18 @@
             case 83: /*s*/    drop(true); break;
             case 87: /*w*/    game._board.cur.rotate('right'); break;
           }
+        } else{
+          switch(evt.keyCode) {
+            case 37: /*left*/   moveLeft(true); break;
+            case 39: /*right*/  moveRight(true); break;
+            case 40: /*down*/   drop(true); break;
+            case 38: /*up*/     game._board.cur.rotate('right'); break;
+            case 88: /*x*/      game._board.cur.rotate('right'); break;
+            case 90: /*z*/      game._board.cur.rotate('left'); break;
+            default: caught = false;
+          }
         }
-        switch(evt.keyCode) {
-          case 37: /*left*/   moveLeft(true); break;
-          case 39: /*right*/  moveRight(true); break;
-          case 40: /*down*/   drop(true); break;
-          case 38: /*up*/     game._board.cur.rotate('right'); break;
-          case 88: /*x*/      game._board.cur.rotate('right'); break;
-          case 90: /*z*/      game._board.cur.rotate('left'); break;
-          default: caught = false;
-        }
+        
         if (caught) evt.preventDefault();
         return !caught;
       };
