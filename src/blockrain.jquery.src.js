@@ -1277,11 +1277,6 @@
 
 
     _getNiceShapes: function() {
-      /*
-       * Things I need for this to work...
-       *  - ability to test each shape with this._filled data
-       *  - maybe give empty spots scores? and try to maximize the score?
-       */
 
       var game = this;
 
@@ -1313,7 +1308,7 @@
           tx = parseInt(tx);
           for (ty=bottoms[tx]+1, i=0; y+ty<height; ty++, i++) {
             if (!game._filled.check(x + tx, y + ty)) {
-              overlaps += i == 0 ? 2 : 1; //TODO-score better
+              overlaps += i == 0 ? 2 : 1;
               //if (i == 0) overlaps += 1;
               break;
             }
@@ -1332,7 +1327,6 @@
         }
       }
 
-      //TODO -- evil mode needs to realize that overlap is bad...
       var func = function(filled, checkCollisions, width, height, mode, _one_shape) {
         if (!_one_shape) resetShapes();
 
@@ -1347,7 +1341,7 @@
           for (y=0; y<=height; y++) {
             if (y == height || filled.check(x, y)) {
               for (py=y-4; py<y; py++) {
-                possibles[filled.asIndex(x, py)] = py; //TODO - figure out better scoring?
+                possibles[filled.asIndex(x, py)] = py;
               }
               break;
             }
@@ -1356,12 +1350,12 @@
 
         // for each shape...
         var opts = _one_shape === undefined ? shapes : {cur: _one_shape}; //BOO
-        for (attr in opts) { //TODO - check in random order to prevent later shapes from winning
+        for (attr in opts) {
           shape = opts[attr];
           best_score_for_shape = -999;
 
           // for each orientation...
-          for (i=0; i<(shape.symmetrical ? 2 : 4); i++) { //TODO - only look at unique orientations
+          for (i=0; i<(shape.symmetrical ? 2 : 4); i++) {
             blocks = shape.getBlocks(i);
             bounds = shape.getBounds(blocks);
 
@@ -1403,7 +1397,6 @@
 
 
     _randomShapes: function() {
-      // Todo: The shapefuncs should be cached.
       var shapeFuncs = [];
       $.each(this._shapeFactory, function(k,v) { shapeFuncs.push(v); });
 
