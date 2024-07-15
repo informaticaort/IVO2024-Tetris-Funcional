@@ -649,6 +649,11 @@
 
           var clearedLines = game._board.lines - startLines;
           this._updateScore(clearedLines);
+
+          //AGREGAR AUDIO CUANDO SE COMPLETA UNA LINEA
+          var lineClearSound = new Audio('line_clear.mp3');
+
+          lineClearSound.play();
         },
         _updateScore: function(numLines) {
           if( numLines <= 0 ) { return; }
