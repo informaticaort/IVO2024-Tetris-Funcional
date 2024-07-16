@@ -4,11 +4,16 @@
       max-width: 560px;
     }
   }
+  #example-slider {
+    width: 400px;
+    z-index: 1;
+  }
 }
 
 @media (max-width: 780px) {
   #example-slider {
     width: 400px;
+    z-index: 1;
   }
   .example {
     height: 340px;
@@ -38,6 +43,7 @@
   #example-slider {
     width: 240px;
     height: 460px;
+    z-index: 1;
   }
   .example {
     padding-top: 100px;
@@ -64,45 +70,12 @@
     }
   }
   #example-slider {
+    z-index: 1  ;
     .buttons {
       position: relative;
       width: 60%;
-      margin: 0 auto;
-      padding-top: 40px;
-      overflow: hidden;
-      .btn {
-        top: 0;
-        margin: 0;
-        position: relative;
-        left: auto;
-        right: auto;
-        height: 50px;
-        width: 28px;
-        &.btn-prev { float: left; }
-        &.btn-next { float: right; }
-      }
+      margin: 0 auto
     }
   }
-}
-@media (max-width: 400px) {
-  #hero .welcome {
-    margin-bottom: 0;
-    padding: 0 20px;
-  }
-  #hero .blockrain-score-holder {
-    display: none !important;
-  }
-  #footer { padding: 0 20px; }
-  #footer p { padding: 0 20px; line-height: 18px; }
-  #footer .buttons { padding: 10px 0 0 0; }
-  #hero .btn, #footer .btn {
-    width: 100%;
-    margin: 0 0 20px;
-    box-sizing: border-box;
-  }
-  #hero .game { opacity: .07; }
-  section header {
-    h1 { font-size: 1.7em; }
-    p { font-size: 1em; }
-  }
+
 }

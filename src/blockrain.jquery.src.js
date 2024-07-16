@@ -1453,21 +1453,12 @@
 
         caught = true;
         if (game.options.asdwKeys) {   // usando asd
-          switch(evt.keyCode) {
-            case 65: /*a*/    moveLeft(true); break;
-            case 68: /*d*/    moveRight(true); break;
-            case 83: /*s*/    drop(true); break;
-            case 87: /*w*/    game._board.cur.rotate('right'); break;
-        //   }
-        // } else{
-        //   switch(evt.keyCode) {  // usando flechas
+          switch(evt.keyCode) {  
             case 37: /*left*/   moveLeft(true); break;
             case 39: /*right*/  moveRight(true); break;
             case 40: /*down*/   drop(true); break;
             case 38: /*up*/     game._board.cur.rotate('right'); break;
-            case 88: /*x*/      game._board.cur.rotate('right'); break;
-            case 90: /*z*/      game._board.cur.rotate('left'); break;
-            default: caught = false;
+           
           }
         }
         

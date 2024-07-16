@@ -1,5 +1,6 @@
 #examples {
   padding-top: 0px;
+  z-index: 1;
   .buttons {
     .btn {
       display: block;
@@ -32,6 +33,7 @@
   height: 420px;
   border-radius: 50%/5%;
   position: relative;
+  z-index: 1 !important;
 
   &:before {
     content: "";

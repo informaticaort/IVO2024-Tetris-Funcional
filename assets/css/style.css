@@ -258,7 +258,8 @@ section header h1:before {
 section header p {
     color: #898989;
     font-size: 1.2em;
-    margin-top: 10px
+    margin-top: 10px;
+
 }
 
 section article {
@@ -279,6 +280,7 @@ section article {
     background: #3b3b3b;
     margin: 0 15px;
     margin: 0 auto;
+    z-index: 1  ;
 }
 
 .btn:before {
@@ -451,7 +453,8 @@ section.versus .game {
     top: 50%;
     margin-top: -30px;
     overflow: hidden;
-    text-indent: -9999px
+    text-indent: -9999px;
+    z-index: 1;
 }
 
 #examples .buttons .btn-prev {
@@ -466,6 +469,7 @@ section.versus .game {
 }
 
 #example-slider {
+    z-index: 1 !important;
     background: #000;
     width: 849.6px;
     height: 604.8px;
