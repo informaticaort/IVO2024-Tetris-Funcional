@@ -1446,21 +1446,21 @@
         game._board.cur.rotate('right'); 
       }
 
-      // Handlers: These are used to be able to bind/unbind controls
+      // Movimiento de las piezas con el tecladp
       var handleKeyDown = function(evt) {
         if( ! game._board.cur ) { return true; }
         var caught = false;
 
         caught = true;
-        if (game.options.asdwKeys) {
+        if (game.options.asdwKeys) {   // usando asd
           switch(evt.keyCode) {
             case 65: /*a*/    moveLeft(true); break;
             case 68: /*d*/    moveRight(true); break;
             case 83: /*s*/    drop(true); break;
             case 87: /*w*/    game._board.cur.rotate('right'); break;
-          }
-        } else{
-          switch(evt.keyCode) {
+        //   }
+        // } else{
+        //   switch(evt.keyCode) {  // usando flechas
             case 37: /*left*/   moveLeft(true); break;
             case 39: /*right*/  moveRight(true); break;
             case 40: /*down*/   drop(true); break;
@@ -1482,11 +1482,11 @@
 
         caught = true;
         if (game.options.asdwKeys) {
-          switch(evt.keyCode) {
-            case 65: /*a*/    moveLeft(false); break;
-            case 68: /*d*/    moveRight(false); break;
-            case 83: /*s*/    drop(false); break;
-          }
+          // switch(evt.keyCode) {
+          //   case 65: /*a*/    moveLeft(false); break;
+          //   case 68: /*d*/    moveRight(false); break;
+          //   case 83: /*s*/    drop(false); break;
+          // }
         }
         switch(evt.keyCode) {
           case 37: /*left*/   moveLeft(false); break;
