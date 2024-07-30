@@ -1,123 +1,31 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>IVO INFO 2024</title>
-    <style>
-    body {
-        margin: 0;
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: black;
-        overflow: hidden; /* Evita el scroll */
-    }
-
-    .neon {
-        position: relative;
-        overflow: hidden;
-        filter: brightness(200%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .text {
-        background-color: black;
-        color: white;
-        font-size: 10vw; /* Tamaño relativo al ancho de la ventana */
-        font-weight: bold;
-        font-family: sans-serif;
-        text-transform: uppercase;
-        position: relative;
-        user-select: none;
-        text-align: center;
-    }
-
-    .text::before {
-        content: attr(data-text);
-        position: absolute;
-        color: white;
-        filter: blur(0.02em);
-        mix-blend-mode: difference;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .gradient {
-        position: absolute;
-        background: linear-gradient(45deg, red, gold, lightgreen, gold, red);
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        mix-blend-mode: multiply;
-    }
-
-    .spotlight {
-        position: absolute;
-        top: -100%;
-        left: -100%;
-        right: 0;
-        bottom: 0;
-        background: 
-            radial-gradient(
-                circle,
-                white,
-                transparent 25%
-            ) center / 25% 25%,
-            radial-gradient(
-                circle,
-                white,
-                black 25%
-            ) center / 12.5% 12.5%;
-        animation: light 5s linear infinite;
-        mix-blend-mode: color-dodge;
-    }
-
-    @keyframes light {
-        to {
-            transform: translate(50%, 50%);
-        }
-    }
-
-    button {
-        margin-top: 20px;
-        padding: 10px 20px;
-        font-size: 1rem;
-        background-color: white;
-        color: black;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s;
-    }
-
-    button:hover {
-        background-color: #ccc;
-    }
-
-    @media (max-width: 600px) {
-        .text {
-            font-size: 20vw; /* Ajusta el tamaño del texto en pantallas más pequeñas */
-        }
-    }
-    </style>
+    <link rel="stylesheet" href="assets/css/estilosInicio.css">
 </head>
 <body>
-    <div class="neon">
-        <span class="text" data-text="IVO INFO 2024">IVO INFO 2024</span>
-        <span class="gradient"></span>
-        <span class="spotlight"></span>
+    
+    <div class="bg-animation">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+        <div id="stars4"></div>
     </div>
-    <button onclick="abrirJuego()">Play</button>
+    
+        <div class="container">
+        <div class="neon">
+            <span class="text" data-text="IVO INFO 2024">IVO INFO 2024</span>
+            <span class="gradient"></span>
+            <span class="spotlight"></span>
+        </div>
+        
+        <button onclick="abrirJuego()">Jugar</button>
+    </div>
+    
 
     <script>
         function abrirJuego() {
