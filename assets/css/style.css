@@ -468,6 +468,10 @@ section.versus .game {
     background-position: right
 }
 
+#examples .buttons .btn-next:after, #examples .buttons .btn-prev:after{
+    position:relative;
+}
+
 #example-slider {
     z-index: 1 !important;
     background: #000;
