@@ -4,77 +4,61 @@
 <head>
   <meta charset="utf-8" />
 
-  <title>IVO 2024</title>
+  <title>IVO INFO 2024</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui" />
   <link rel="shortcut icon" href="assets/images/favicon.png">
   <link href='http://fonts.googleapis.com/css?family=Play:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="assets/css/fondo.css">
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="src/blockrain.css">
   <link rel="shortcut icon" href="assets/images/ico.ico" />
  
-
 </head>
 
 <body>
   <canvas></canvas>
-  <div id="gam6">
-    <section id="examples">
-      <header>
-        <h1>IVO 2024 - Tetris</h1>
-      </header>
-      <article id="example-slider">
-        <div class="example">
-          <div class="theme">tema: <strong>"vim"</strong></div>
-          <div class="instructions">
-            Usar solo flechas
-            <div class="keyboard">
-              <div class="key key-up"></div>
-              <div class="key key-left"></div>
-              <div class="key key-down"></div>
-              <div class="key key-right"></div>
-            </div>
+  <section id="examples">
+    <header>
+      <!-- Título de la página -->
+      <h1>IVO INFO 2024 - Tetris</h1>
+    </header>
+    <article id="example-slider">
+      <div class="example">
+        <div class="theme">tema: <strong>"vim"</strong></div>
+        <div class="instructions">
+          Usar solo flechas
+          <div class="keyboard">
+            <div class="key key-up"></div>
+            <div class="key key-left"></div>
+            <div class="key key-down"></div>
+            <div class="key key-right"></div>
           </div>
-          <div class="game" id="tetris-demo"></div>
         </div>
-        <div class="buttons">
-          <a href="" class="btn btn-prev">Previous</a>
-          <a href="" class="btn btn-next">Next</a>
-        </div>
-      </article>
-      <button id="toggle-sound" class="btn">
-        <img src="./assets/images/speaker.png" alt="Toggle Sound">
-      </button>
-
-    </section>
-
-
-    <!--section class="play">
-
-    <h1>Play</h1>
-
-    <div class="game" id="tetris-play">
-
-    </div>
-
-  </section-->
-
-
-    <footer id="footer">
+        <div class="game" id="tetris-demo"></div>
+      </div>
       <div class="buttons">
-        <a href="botsplay.html" class="btn btn-download"><img src="assets/images/bot-icon.png" alt="Bot">Dejá que los robots
-          jueguen</a>
-          <a href="vsBot.html" class="btn btn-download" onclick=""><img src="assets/images/bot-icon.png" alt="Bot">Jugá contra la compu</a>
-          <!--<a href="vs.html" class="btn btn-download" onclick=""><img src="assets/images/bot-icon
-          -->
-    </footer>
-  <div>
+        <a href="" class="btn btn-prev">Previous</a>
+        <a href="" class="btn btn-next">Next</a>
+      </div>
+    </article>
+    <button id="toggle-sound" class="btn">
+      <img src="./assets/images/speaker.png" alt="Toggle Sound">
+    </button>
+
+  </section>
 
 
+  <footer id="footer">
+    <div class="buttons">
+      <a href="botsplay.html" class="btn btn-download"><img src="assets/images/bot-icon.png" alt="Bot">Dejá que los robots
+        jueguen</a>
+        <a href="vsBot.html" class="btn btn-download" onclick=""><img src="assets/images/bot-icon.png" alt="Bot">Jugá contra la compu</a>
+        
+  </footer>
   
   <audio id="background-music" loop>
     <source src="./assets/audio/background.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
   </audio>
   <script src="assets/js/fondo.js"></script>
   <script src="assets/js/jquery-1.11.1.min.js"></script>
@@ -89,18 +73,21 @@
     var estaSonando = true;
 
     document.addEventListener('DOMContentLoaded', function() {
-      //EDITAR VOLUMEN DE MUSICA DE FONDO
-      backgroundMusic.volume = 0;
+      backgroundMusic.volume = 1;
       backgroundMusic.play();
 
       document.getElementById('toggle-sound').addEventListener('click', function() {
-        //AGREGAR FUNCIONALIDAD DE BOTON DE SONIDO
-        //SI ESTA SONANDO, PAUSAR
-        //SI NO ESTA SONANDO, REPRODUCIR
+        if (estaSonando) {
+          backgroundMusic.pause();
+          estaSonando = false;
+        } else {
+          backgroundMusic.play();
+          estaSonando = true;
+        }
                 
       });
     });
-    //---
+  
 
     var $cover = $('#cover-tetris').blockrain({
       autoplay: true,
@@ -141,7 +128,7 @@
     var $demo = $('#tetris-demo').blockrain({
       speed: 20,
       theme: 'vim',
-      
+     
     });
 
     $('#example-slider').find('.btn-next').click(function (event) {
