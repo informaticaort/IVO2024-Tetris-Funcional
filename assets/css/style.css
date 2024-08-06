@@ -1,3 +1,4 @@
+/* Cambia los estilos de TODA la página */
 html,
 body {
     background: #3b3d3b;
@@ -8,17 +9,6 @@ body {
     line-height: 160%;
     font-size: 16px;
     color: #fff
-}
-
-/*! normalize.css v3.0.1 | MIT License | git.io/normalize */
-html {
-    font-family: sans-serif;
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%
-}
-
-body {
-    margin: 0
 }
 
 article,
@@ -247,6 +237,7 @@ section header h1 {
     margin-bottom: 10px
 }
 
+/* Título */
 section header h1:after,
 section header h1:before {
     content: "**********";
@@ -268,6 +259,7 @@ section article {
     margin: 0 auto
 }
 
+/* Botones */
 .btn {
     border: 2px solid #fff;
     color: #fff;
@@ -291,7 +283,6 @@ section article {
     height: 14px;
     width: 14px;
     margin-right: 10px;
-    /*background:url(../images/icon-sprite.png) no-repeat;*/
     background-size: auto 100%
 }
 
@@ -472,6 +463,8 @@ section.versus .game {
     position:relative;
 }
 
+/* Fondo juego */
+
 #example-slider {
     z-index: 1 !important;
     background: #000;
@@ -492,6 +485,8 @@ section.versus .game {
     border-radius: 5%/50%
 }
 
+/* Elementos dentro del juego */
+/* Texto del tema */
 .example {
     padding: 50px 0 0 0;
     color: #c2ffad;
@@ -505,6 +500,8 @@ section.versus .game {
     height: 475.2px;
     position: static
 }
+
+/* Puntaje */
 
 .example .game .blockrain-score-holder {
     left: 100%;
@@ -529,6 +526,8 @@ section.versus .game {
     height: 100%
 }
 
+/* Mensaje de game over */
+
 .example .game .blockrain-start-msg,
 .example .game .blockrain-game-over-msg {
     color: #c2ffad;
@@ -543,6 +542,8 @@ section.versus .game {
     font-size: 24px;
     margin-top: -24px
 }
+
+/* Botones dentro del juego */
 
 .example .game .blockrain-start-btn,
 .example .game .blockrain-game-over-btn {
@@ -589,6 +590,8 @@ section.versus .game {
     overflow: hidden;
     font-size: 14px
 }
+
+/* Instrucciones para jugar */
 
 .example .instructions .key {
     border: 1px solid #c2ffad;
@@ -637,6 +640,8 @@ section.versus .game {
     background-position: -70px 0
 }
 
+/* Estilos para dejar que los bots compitan */
+/* Dentro del juego */
 #versus-arena {
     background: #000;
     width: 849.6px;
@@ -669,6 +674,8 @@ section.versus .game {
     height: 475.2px;
     position: static
 }
+
+/* Puntaje */
 
 #versus-arena .score {
     position: absolute;
@@ -730,16 +737,8 @@ section.versus .game {
     padding: 20px 0
 }
 
-#footer .buttons .btn {
-    background: #3b3d3b
-}
-
 #footer p {
     font-size: .85em
-}
-
-#footer p a {
-    color: #ff7b00
 }
 
 #footer p img {
@@ -891,9 +890,7 @@ section.versus .game {
     }
 }
 
-/*# sourceMappingURL=style.css.map */
-
-/*blockrain.css*/
+/* Estilos propios de lo que vemos como la "televisión" */
 .blockrain-game-holder {
   position: relative;
   padding: 0;
@@ -967,7 +964,7 @@ section.versus .game {
     content: ".";
   }
   
-  /* Buttons */
+  /* Botones */
   .blockrain-btn {
     position: relative;
     display: inline-block;
@@ -1017,7 +1014,7 @@ section.versus .game {
   }
   
   
-  /* Score */
+  /* Puntaje */
   .blockrain-score-holder {
     position: absolute;
     top: 20px;
